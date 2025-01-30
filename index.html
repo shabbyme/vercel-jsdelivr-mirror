@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d6efd">
+  <title>梦泽的 jsDelivr 镜像站</title>
+
+  <!-- 引入 Tailwind CSS 2.2.19 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+  <!-- 引入 Font Awesome 5 -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="bg-gradient-to-b from-blue-100 to-white text-gray-800">
+
+  <!-- 顶部导航 -->
+  <header class="bg-blue-600 text-white text-center py-6 shadow-md">
+    <h1 class="text-3xl font-bold">梦泽的 jsDelivr 镜像站</h1>
+    <p class="text-lg">提供中国大陆地区优化的 jsDelivr 镜像加速服务</p>
+    <a href="https://jsdelivr.linexic.top" class="mt-4 inline-block bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+      <i class="fas fa-external-link-alt"></i> 立即使用
+    </a>
+  </header>
+
+  <!-- 主体内容 -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- 服务介绍 -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">关于本镜像站</h2>
+      <p>本镜像站提供优化的 <b>jsDelivr</b> 内容分发网络（CDN）加速服务，专为中国大陆用户优化访问体验。</p>
+      <p>官方域名：
+        <a href="https://jsdelivr.linexic.top" class="text-blue-500 hover:underline">https://jsdelivr.linexic.top</a>。
+        站点托管于 <b>Vercel</b>，并且完全开源，代码可在
+        <a href="https://github.com/YShenZe/vercel-jsdelivr-mirror" class="text-blue-500 hover:underline">GitHub</a> 获取。
+      </p>
+    </section>
+
+    <!-- 新增搜索卡片 -->
+   <section class="bg-white shadow-md rounded-lg p-6 mb-6 max-w-xl mx-auto">
+  <h2 class="text-2xl font-bold text-blue-600 mb-4 text-center">快速搜索 npm 包</h2>
+  <form id="searchForm" class="flex flex-col sm:flex-row gap-2 justify-center">
+    <input type="text" id="packageInput" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+      placeholder="输入 npm 包名 (例: jquery@3.0.0)" required>
+    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center gap-2 w-full sm:w-auto justify-center">
+      <i class="fas fa-search"></i> 搜索
+    </button>
+  </form>
+</section>
+
+    <!-- 使用方法 -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">如何使用本镜像站？</h2>
+      <p>如果您需要访问 jsDelivr 提供的加速资源，例如：</p>
+      <!-- 代码块容器 -->
+      <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+        <code>https://cdn.jsdelivr.net/npm/jquery@4.0.0-beta.2/dist/jquery.min.js</code>
+      </div>
+      <p class="mt-4">请将 <code class="bg-gray-200 px-2 py-1 rounded">cdn.jsdelivr.net</code> 替换为 <code class="bg-gray-200 px-2 py-1 rounded">jsdelivr.linexic.top</code>，即可获得优化后的加速链接：</p>
+      <!-- 代码块容器 -->
+      <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+        <code>https://jsdelivr.linexic.top/npm/jquery@4.0.0-beta.2/dist/jquery.min.js</code>
+      </div>
+      <p class="mt-4">此方法适用于所有 jsDelivr 支持的 CDN 资源，保证访问稳定性和速度。</p>
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">如何进入项目文件夹？</h2>
+      <p>访问如下格式的链接：</p>
+      <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+        <code>https://jsdelivr.linexic.top/npm/包名@版本/</code>
+      </div>
+      <p class="mt-4">请将 <code class="bg-gray-200 px-2 py-1 rounded">包名</code> 和 <code class="bg-gray-200 px-2 py-1 rounded">版本号</code>替换为npm包的包名和版本号，即可获得该项目的文件夹链接：</p>
+      <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+        <code>https://jsdelivr.linexic.top/npm/jquery@4.0.0-beta.2/</code>
+      </div>
+    </section>
+
+    <!-- 使用规范 -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">使用规范</h2>
+      <p>为了确保服务的稳定性与合规性，使用本镜像站时请遵守以下规定：</p>
+      <ul class="list-disc pl-6">
+        <li><b>不得</b> 加速或传播违反中国大陆法律法规的内容，包括但不限于色情、暴力、政治敏感信息等。</li>
+        <li>镜像站提供 <b>稳定加速服务</b>，但不对长期可用性做保证。</li>
+        <li>如需清除缓存，请参考 <a href="https://www.jsdelivr.com" class="text-blue-500 hover:underline">jsDelivr 官方指南</a>。</li>
+      </ul>
+    </section>
+
+    <!-- 自行部署 -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">如何自建镜像站？</h2>
+      <p>本项目完全开源，您可以自由部署。开源代码：
+        <a href="https://github.com/YShenZe/vercel-jsdelivr-mirror" class="text-blue-500 hover:underline">GitHub 仓库</a>。
+      </p>
+      <p>如果您希望在本地搭建反向代理，可参考：
+        <a href="https://github.com/YShenZe/vercel-jsdelivr-mirror/blob/main/nginx.conf" class="text-blue-500 hover:underline">Nginx 配置文件</a>。
+      </p>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="bg-white shadow-md rounded-lg p-6 text-center">
+      <h2 class="text-2xl font-bold text-blue-600 mb-2">联系站长</h2>
+      <p>如有任何问题或建议，请联系站长：</p>
+      <p class="text-lg">
+        <i class="fas fa-envelope text-blue-600"></i>
+        <a href="mailto:yshenze123@gmail.com" class="text-blue-500 hover:underline">yshenze123@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-white text-center py-4 mt-6">
+    <p>Copyright © 2024 <a href="https://yzeblog.github.io" class="text-blue-400 hover:underline">梦泽</a></p>
+    <p>基于 <a href="https://github.com/YShenZe/vercel-jsdelivr-mirror" class="text-blue-400 hover:underline">开源项目</a> 运行</p>
+  </footer>
+  <script>
+    // 添加表单提交处理
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('packageInput').value.trim();
+
+      if (input) {
+        const encodedInput = encodeURIComponent(input);
+        window.location.href = `https://jsdelivr.linexic.top/npm/${encodedInput}/`;
+      }
+    });
+  </script>
+</body>
+
+</html>
