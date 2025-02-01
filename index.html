@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d6efd">
   <title>梦泽的 jsDelivr 镜像站</title>
+  <meta name="description" content='由梦泽搭建的jsDelivr反代镜像站，样式来自tailwindcss可以使用Vercel搭建绑定自己的域名。有搜索npm包等多种功能https://jsdelivr.linexic.top/'>
+  <meta name="keywords" content="jsDelivr,林梦泽,反代镜像站">
+  <meta name="anthor" content="梦泽,yshenze123@gmail.com">
 
   <!-- 引入 Tailwind CSS 2.2.19 -->
   <link href="https://cdn.bootcdn.net/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -20,7 +23,7 @@
   <header class="bg-blue-600 text-white text-center py-6 shadow-md">
     <h1 class="text-3xl font-bold">梦泽的 jsDelivr 镜像站</h1>
     <p class="text-lg">提供中国大陆地区优化的 jsDelivr 镜像加速服务</p>
-    <a href="https://jsdelivr.linexic.top" class="mt-4 inline-block bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+    <a href="#npm" class="mt-4 inline-block bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
       <i class="fas fa-external-link-alt"></i> 立即使用
     </a>
   </header>
@@ -39,6 +42,7 @@
     </section>
 
     <!-- 新增搜索卡片 -->
+    <div id="npm">
    <section class="bg-white shadow-md rounded-lg p-6 mb-6 max-w-xl mx-auto">
   <h2 class="text-2xl font-bold text-blue-600 mb-4 text-center">快速搜索 npm 包</h2>
   <form id="searchForm" class="flex flex-col sm:flex-row gap-2 justify-center">
@@ -49,7 +53,7 @@
     </button>
   </form>
 </section>
-
+    </div>
     <!-- 使用方法 -->
     <section class="bg-white shadow-md rounded-lg p-6 mb-6">
       <h2 class="text-2xl font-bold text-blue-600 mb-2">如何使用本镜像站？</h2>
