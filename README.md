@@ -1,5 +1,8 @@
 # vercel-jsdelivr-mirror
 
+> [!TIP]
+> JsDeliv-CN项目已上线！使用本套源码，提供长期免费的JsDelivr中国加速服务：https://jsdelivr.dev.tc/
+
 基于 Vercel 的 jsDelivr 反向代理源码，提供一个简便的方式在 Vercel 部署自己的 jsDelivr 代理，以解决 jsDelivr 在部分地区访问受限的问题。
 
 ## ✨ 功能特点
