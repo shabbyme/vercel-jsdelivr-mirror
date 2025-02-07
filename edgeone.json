@@ -1,28 +1,42 @@
 {
-    "version": "1.0",
-    "routes": [
-        {
-            "id": "route-root",
-            "match": {
-                "type": "exact",
-                "path": "/"
-            },
-            "action": {
-                "type": "rewrite",
-                "destination": "/index.html"
-            }
-        },
-        {
-            "id": "route-default",
-            "match": {
-                "type": "regex",
-                "pattern": "^(.*)$"
-            },
-            "action": {
-                "type": "proxy",
-                "target": "https://cdn.jsdelivr.net",
-                "preserveHost": true
-            }
+  "version": "1.0",
+  "routes": [
+    {
+      "id": "root-route",
+      "match": {
+        "type": "exact",
+        "path": "/"
+      },
+      "action": {
+        "type": "rewrite",
+        "destination": "/index.html"
+      }
+    },
+    {
+      "id": "jsdelivr-proxy",
+      "match": {
+        "type": "regex",
+        "pattern": "^/jsdelivr/(.*)$"
+      },
+      "action": {
+        "type": "proxy",
+        "target": "https://cdn.jsdelivr.net/${1}",
+        "preserveHost": false,
+        "headers": {
+          "X-Proxy-Source": "EdgeOne"
         }
-    ]
+      }
+    },
+    {
+      "id": "default-route",
+      "match": {
+        "type": "regex",
+        "pattern": "^(.*)$"
+      },
+      "action": {
+        "type": "rewrite",
+        "destination": "https://cdn.jsdelivr.net/${1}"
+      }
+    }
+  ]
 }
