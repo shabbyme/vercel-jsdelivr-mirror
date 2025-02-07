@@ -1,8 +1,28 @@
 {
-  "version": 2,
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    {"src": "/en","dest": "/index-en.html"},
-    { "src": "/(.*)", "dest": "https://cdn.jsdelivr.net" }
+    "version": "1.0",
+    "routes": [
+        {
+            "id": "route-root",
+            "match": {
+                "type": "exact",
+                "path": "/"
+            },
+            "action": {
+                "type": "rewrite",
+                "destination": "/index.html"
+            }
+        },
+        {
+            "id": "route-default",
+            "match": {
+                "type": "regex",
+                "pattern": "^(.*)$"
+            },
+            "action": {
+                "type": "proxy",
+                "target": "https://cdn.jsdelivr.net",
+                "preserveHost": true
+            }
+        }
     ]
 }
