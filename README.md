@@ -13,7 +13,6 @@
 
 ## 快速部署
 
-单击此按钮快捷部署：  
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YShenZe/vercel-jsdelivr-mirror&project-name=jsd&repository-name=jsd)  
 
 ### 重要提醒  
