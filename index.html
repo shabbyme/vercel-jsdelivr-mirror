@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JsDelivr中国镜像站</title>
-  <meta name="description" content='由梦泽搭建的jsDelivr反代镜像站，样式来自tailwindcss可以使用Vercel搭建绑定自己的域名。有搜索npm包等多种功能https://jsdelivrcn.dev.tc/'>
-  <meta name="keywords" content="jsDelivr,林梦泽,反代镜像站">
-  <meta name="anthor" content="梦泽,yshenze123@gmail.com">
+  <titleJsDelivro and Docker中国镜像站</title>
+  <meta name="description" content='由Shabby搭建的jsDelivr和docker反代镜像站展示页https://c.aoe.me/'>
+  <meta name="keywords" content="jsDelivr,Docker,Shabby,反代镜像站">
+  <meta name="anthor" content="Shabby,888454@gmail.com">
   <style>
     :root {
       --primary: #2A5C82;
@@ -305,13 +305,10 @@
 <body>
   <header>
     <div class="nav-container">
-      <div class="nav-logo">JsDelivr中国镜像站</div>
+      <div class="nav-logo">JsDelivr or Docker</div>
       <nav class="nav-links">
-<a href="https://yzeblog.dev.tc">站长博客</a> 
-      <a href="https://linexic.top">LineXic博客</a> 
-<a href="https://jsdelivr.dev.tc/en">English</a> 
-      <a href="https://blogecho.zeimg.top">BlogEcho</a> 
-      <a href="mailto:yshenze123@gmail.com">联系站长</a>
+<a href="https://shabby">站长博客</a> 
+      <a href="mailto:888454@gmail.com">联系站长</a>
         <button class="dark-mode-toggle" id="darkModeToggle">暗色模式</button>
       </nav>
       <div class="hamburger" id="hamburger">
@@ -321,11 +318,8 @@
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="https://yzeblog.dev.tc">站长博客</a> 
-      <a href="https://linexic.top">LineXic博客</a> 
-<a href="https://jsdelivr.dev.tc/en">English</a>
-      <a href="https://blogecho.zeimg.top">BlogEcho</a> 
-      <a href="mailto:yshenze123@gmail.com">联系站长</a>
+      <a href="https://shabby">站长博客</a> 
+      <a href="mailto:888454@gmail.com">联系站长</a>
       <!-- 移动端也添加切换按钮 -->
       <button class="dark-mode-toggle" id="darkModeToggleMobile">暗色模式</button>
     </div>
@@ -333,27 +327,42 @@
 
   <section class="hero">
     <div>
-      <h1>JsDelivr China Mirror Site</h1>
+      <h1>JsDelivr and Docker China Mirror Site</h1>
       <p>
-        中国大陆地区优化的 jsDelivr CDN 加速服务<br>
-        由 <a href="https://yzeblog.dev.tc" style="color: white; text-decoration: underline;">@梦泽</a> 和
-        <a href="https://linexic.top" style="color: white; text-decoration: underline;">@LineXic</a> 提供
-      </p>
-      <a href="#contact" class="btn">立即使用</a>
+        中国大陆地区优化的 jsDelivr 和 Docker 代理服务<br>
     </div>
   </section>
 
   <div class="container">
     <section id="about">
-      <h1>如何使用本镜像站？</h1>
-      <p>若您需要使用加速服务，只需将 jsDelivr 链接中的 <code>cdn.jsdelivr.net</code> 替换为 <code>jsdelivrcn.dev.tc</code>即可。比如：</p>
+      <h1>如何使用jsDelivr镜像服务？</h1>
+      <p>若您需要使用加速服务，只需将 jsDelivr 链接中的 <code>cdn.jsdelivr.net</code> 替换为 <code>jsd.aoe.me</code>即可。比如：</p>
       <p><pre>https://cdn.jsdelivr.net/npm/jquery@4.0.0-beta.2/dist/jquery.min.js</pre></p>
       <p>替换后变为：</p>
-      <p><pre>https://jsdelivrcn.dev.tc/npm/jquery@4.0.0-beta.2/dist/jquery.min.js</pre></p>
+      <p><pre>https://jsd.aoe.me/npm/jquery@4.0.0-beta.2/dist/jquery.min.js</pre></p>
       <p>若想访问项目文件夹，请使用如下格式：</p>
-      <p><pre>https://jsdelivrcn.dev.tc/npm/包名@版本/</pre></p>
+      <p><pre>https://jsd.aoe.me/npm/包名@版本/</pre></p>
       <p>示例：</p>
-      <p><pre>https://jsdelivrcn.dev.tc/npm/jquery@4.0.0-beta.2/</pre></p>
+      <p><pre>https://jsd.aoe.me/npm/jquery@4.0.0-beta.2/</pre></p>
+      <hr>
+      <br>
+      <h1>如何使用Docker镜像服务？</h1>
+      <p>原拉取镜像命令</p>
+      <p><pre>docker pull library/alpine:latest</per></p>
+      <p>加速拉取镜像命令</p>
+      <p><pre>docker pull hub.aoe.me/library/alpine:latest</pre></p>
+      <p>修改 /etc/docker/daemon.json 文件</p>
+      <p><pre>{
+  "registry-mirrors": [
+    "https://hub.aoe.me",
+  ]
+}</pre></p>
+      <p>重载systemd管理守护进程配置文件</p>
+      <p><pre>sudo systemctl daemon-reload</pre></p>
+      <p>重启 Docker 服务</p>
+      <p><pre>sudo systemctl restart docker</pre></p>
+      <p>一键设置 registry mirror</p>
+      <p><pre>sudo tee /etc/docker/daemon.json </pre></p>
       <hr>
       <br>
       <p>为了确保服务的稳定性与合规性，使用本镜像站时请遵守以下规定：</p>
@@ -362,13 +371,13 @@
         <li>镜像站提供 <b>稳定加速服务</b>，但不对长期可用性做保证。</li>
         <li>如需清除缓存，请参考 <a href="https://www.jsdelivr.com" class="text-blue-500 hover:underline">jsDelivr 官方指南</a>。</li>
       </ul>
-      <p>项目开源地址：<a href="https://github.com/YShenZe/vercel-jsdelivr-mirror" target="_blank" style="color: var(--accent); text-decoration: underline;">GitHub 仓库</a></p>
+      <p>项目开源地址：<a href="https://github.com/ymyuuu/HubP" target="_blank" style="color: var(--accent); text-decoration: underline;">HubP</a></p>
     </section>
 
   </div>
 
   <footer>
-    <p>&copy; 2024 梦泽的 jsDelivr 镜像站 · 基于开源项目运行</p>
+    <p>&copy; 2024 jsDelivr和Docker 镜像站 · 基于开源项目运行</p>
   </footer>
 
   <script>
